@@ -11,6 +11,12 @@ def index():
         session['count'] += 1
     return render_template("index.html")
 
+@app.route('/addfour')
+def four():
+    if "count" in session:
+        session['count'] += 4
+    return render_template("index.html")
+
 @app.route('/reset')
 def reset ():
     session.clear()
